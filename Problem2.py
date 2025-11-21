@@ -44,9 +44,9 @@ class MyMinHeap:
         curr =  i
         right = self.heap[self.rightChild(curr)]
         left = self.heap[self.leftChild(curr)]
-        if self.heap[i] < right:
+        if self.heap[curr] > right:
             curr = right
-        if self.heap[i] < left:
+        if self.heap[curr] > left:
             curr = left
         if i != curr:
             self.swap(i,curr)

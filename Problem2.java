@@ -48,7 +48,7 @@ class MyMinHeap {
         heap[size] = val;
         int curr = size;
         size += 1;
-        while (size > 0){
+        while (curr > 0){
             if (heap[curr] < heap[parent(curr)]){
                 swap(curr,parent(curr));
                 curr = parent(curr);
@@ -64,10 +64,10 @@ class MyMinHeap {
             return;
         }
         int smallest = i;
-        if (rightChild(i) < size && heap[i]< heap[rightChild(i)]){
+        if (rightChild(i) < size && heap[smallest]> heap[rightChild(i)]){
             smallest = rightChild(i);
         }
-        if (leftChild(i) < size && heap[i]< heap[leftChild(i)]){
+        if (leftChild(i) < size && heap[smallest]> heap[leftChild(i)]){
             smallest = leftChild(i);
         }
         if (smallest != i){
